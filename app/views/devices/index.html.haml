@@ -1,0 +1,20 @@
+%table.table.table-condensed
+  %thead
+    %tr
+      %th id
+      %th Номер договора
+      %th Название
+      %th Логин
+      %th Частота
+      %th Действия
+  %tbody
+    - @devices.each do |d|
+      %tr
+        %td= d.contract_id
+        %td= d.contract_title
+        %td= d.contract_comment
+        %td= d.login
+        %td= d.frequency
+        %td
+#pagination
+  = paginate @devices
