@@ -52,7 +52,7 @@ class DevicesController < ApplicationController
     params.require(:device).permit(:login, :frequency)
   end
 
-  def update_params; create_params end
+  delegate :update_params, :create_params
 
   def inet_not_found
     render :failing

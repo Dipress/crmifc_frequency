@@ -1,0 +1,33 @@
+AllCops:
+  Exclude:
+    - db/**/*
+    - bin/**/*
+    - config/**/*
+    - spec/spec_helper.rb
+    - spec/rails_helper.rb
+    - lib/tasks/auto_annotate*
+    - Gemfile
+    - Rakefile
+    - config.ru
+
+Rails:
+  Enabled: true
+
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 90
+  Exclude:
+    - spec/**/*
+
+Metrics/ModuleLength:
+  Exclude:
+    - "**/*_spec.rb"
+
+Metrics/BlockLength:
+  Exclude:
+    - "**/*_spec.rb"
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

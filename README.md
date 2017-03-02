@@ -1,25 +1,11 @@
-# README
+## Project setup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Install bundler, and gems
 
-Things you may want to cover:
+        $ gem install bundler
+        $ bundle install
 
-* Ruby version
+2. Install git hooks
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# crmifc_frequency
+        $ overcommit --install
+        $ overcommit --sign
