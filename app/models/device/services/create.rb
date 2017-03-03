@@ -12,7 +12,7 @@ class Device
 
       def find_contract
         inet = InetService.find_by(login: device.login)
-        raise ActiveRecord::RecordNotFound if inet.nil?
+        raise Device::Services::InetNotFound if inet.nil?
         Contract.find(inet.contractId)
       end
 

@@ -1,5 +1,5 @@
 class DevicesController < ApplicationController
-  rescue_from ActiveRecord::RecordNotFound, with: :inet_not_found
+  rescue_from Device::Services::InetNotFound, with: :inet_not_found
 
   def index
     @devices = Device.page(params[:page]).per(50)
@@ -52,9 +52,11 @@ class DevicesController < ApplicationController
     params.require(:device).permit(:login, :frequency)
   end
 
-  delegate :update_params, :create_params
+  delegate :update_params, to: :create_params
 
   def inet_not_found
+    last = Device.find_by(login: @device.login)
+    last.destroy
     render :failing
   end
 end
