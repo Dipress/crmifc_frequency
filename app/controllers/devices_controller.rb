@@ -52,7 +52,7 @@ class DevicesController < ApplicationController
     params.require(:device).permit(:login, :frequency)
   end
 
-  delegate :update_params, to: :create_params
+  alias_method :update_params, :create_params
 
   def inet_not_found
     last = Device.find_by(login: @device.login)
