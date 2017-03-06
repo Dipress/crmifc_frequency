@@ -78,3 +78,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Code climate
 gem 'rubocop', require: false
+
+# For authentication and authorization
+gem 'devise'
