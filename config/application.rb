@@ -13,6 +13,8 @@ module CrmFrequency
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     Mongoid.load!(File.expand_path('mongoid.yml', './config'))
+
+   #config.web_console.whitelisted_ips = '172.28.200.30'
     
     config.generators do |g|
     	g.orm :mongoid
@@ -20,6 +22,7 @@ module CrmFrequency
     config.generators do |g|
     	g.template_engine :haml
     end
+
     config.time_zone = 'Europe/Moscow'
   end
 end

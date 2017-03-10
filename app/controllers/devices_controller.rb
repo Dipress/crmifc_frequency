@@ -1,4 +1,5 @@
 class DevicesController < ApplicationController
+  before_action :authenticate_user!
   rescue_from Device::Services::InetNotFound, with: :inet_not_found
 
   def index
@@ -52,7 +53,7 @@ class DevicesController < ApplicationController
     params.require(:device).permit(:login, :frequency)
   end
 
-  alias_method :update_params, :create_params
+  alias update_params create_params
 
   def inet_not_found
     last = Device.find_by(login: @device.login)
