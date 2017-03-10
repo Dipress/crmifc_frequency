@@ -43,6 +43,7 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/uplo
 
 set :tmp_dir, "/home/deploy/tmp"
 
+before "deploy:assets:precompile"
 after "deploy", "deploy:cleanup"
 after 'deploy:publishing', 'deploy:restart'
 
