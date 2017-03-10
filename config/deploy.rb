@@ -17,7 +17,7 @@ set :conditionally_migrate, true
 set :assets_roles, [:app, :web]
 
 # Default value for :scm is :git
-set :scm, :git
+# set :scm, :git
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh

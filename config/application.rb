@@ -22,6 +22,7 @@ module CrmFrequency
     config.generators do |g|
     	g.template_engine :haml
     end
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
 
     config.time_zone = 'Europe/Moscow'
   end
