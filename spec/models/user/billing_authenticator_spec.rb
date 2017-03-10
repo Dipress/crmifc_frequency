@@ -8,7 +8,7 @@ RSpec.describe User::BillingAuthenticator do
     allow(User).to receive('find_by').and_return(OpenStruct.new(pswd: digest))
   end
 
-   context '.authenticate' do
+  context '.authenticate' do
     it 'should authenticate user with corrent password' do
       expect(User.authenticate('Any', password)).to_not be_nil
     end

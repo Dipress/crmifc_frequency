@@ -5,6 +5,8 @@ class Device
 
   paginates_per 50
 
+  # belongs_to :user
+
   field :contract_id, type: Integer
   field :contract_title, type: String
   field :contract_comment, type: String

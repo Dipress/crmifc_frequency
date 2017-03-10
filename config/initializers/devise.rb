@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  config.secret_key = '96f97afe17ec3437186e8bd66d9644d09e6b149eec39acbf2688752ba00bebe7c1f32c0050efc25b1235c344faf6da9fd3f5fc3d3395bdf28c7636ae5606c1fb'
+  # config.secret_key = '07116e7ed46624c1abddd23d1e1a8bc70e976ed17024e9eeaf2e0730fc4a01a5258a90dda19485d8508bd76f1f15ac475cdf4a48f0f83a40121173f836be7733'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -34,7 +34,7 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  config.authentication_keys = [:username]
+  # config.authentication_keys = [:email]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -75,7 +75,7 @@ Devise.setup do |config|
   # It will change confirmation, password recovery and other workflows
   # to behave the same regardless if the e-mail provided was right or wrong.
   # Does not affect registerable.
-  # config.paranoid = true
+  config.paranoid = false
 
   # By default Devise will store the user in session. You can skip storage for
   # particular strategies by setting this option.
@@ -108,7 +108,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'cbe4b2c074354dfce4c21381bff89464d2e906e5a7556491ee2739a5e768cf1c199299255c39e22b537fe8806227a3ee8bb74926a1ed80cc31072828495d6303'
+  # config.pepper = '9a93751500916dbad2643d1d6cc0d59344477e8adcfa8eca61b8bd98818d216d1fa50ed71a8a146d7d07e99a06e081f4f79eabe5b9e3dda834268d349e270390'
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
@@ -253,13 +253,12 @@ Devise.setup do |config|
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
   #
-  # config.warden do |manager|
+  config.warden do |manager|
+    manager.strategies.add(:billing, Devise::Strategies::BillingAuthenticatable)
+    manager.default_strategies(:scope => :user).delete :database_authenticatable 
+    manager.default_strategies(:scope => :user).unshift :billing 
   #   manager.intercept_401 = false
   #   manager.default_strategies(scope: :user).unshift :some_external_strategy
-  # end
-  config.warden do |manager|
-    manager.strategies.add(:password, Devise::Strategies::Billing) 
-    manager.default_strategies(:scope => :user).unshift :billing 
   end
 
   # ==> Mountable engine configurations
