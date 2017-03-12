@@ -3,7 +3,7 @@ class DevicesController < ApplicationController
   rescue_from Device::Services::InetNotFound, with: :inet_not_found
 
   def index
-    @devices = Device.page(params[:page]).per(50)
+    @devices = Device.order_by(created_at: 'desc').page(params[:page])
   end
 
   def new

@@ -3,9 +3,7 @@ class Device
   include Mongoid::Timestamps::Created
   include Mongoid::Slug
 
-  paginates_per 50
-
-  # belongs_to :user
+  paginates_per 25
 
   field :contract_id, type: Integer
   field :contract_title, type: String
