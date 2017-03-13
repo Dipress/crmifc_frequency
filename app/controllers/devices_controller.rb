@@ -32,7 +32,7 @@ class DevicesController < ApplicationController
     @device = Device.find(params[:id])
     if @device.update(update_params)
       @contract = Device::Services::Create.new(@device).contract
-      @contract.contract_parameter_type1.where(pid: 75).update(val: @device.frequency)
+      @contract.contract_parameter_type1.where(pid: 75).update_all(val: @device.frequency)
       redirect_to @device
     else
       render :edit

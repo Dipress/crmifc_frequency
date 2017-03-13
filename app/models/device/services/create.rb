@@ -19,12 +19,11 @@ class Device
       def find_parameter
         parameter = contract.contract_parameter_type1.find_by(pid: 75)
         return parameter if parameter.present?
-        contract.contract_parameter_type1.create(pid: 75)
+        contract.contract_parameter_type1.create(pid: 75, val: device.frequency)
         find_parameter
       end
 
       def set_frequency
-        parameter.update(val: device.frequency)
         device.update(contract_id: contract.id,
                       contract_title: contract.title,
                       contract_comment: contract.comment)
