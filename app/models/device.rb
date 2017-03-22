@@ -10,8 +10,11 @@ class Device
   field :contract_comment, type: String
   field :login, type: String
   field :frequency, type: String
+  field :mac, type: String
+  field :hardware, type: String
 
   slug :contract_id
 
   validates :login, :frequency, presence: true
+  validates :hardware, presence: true
 end

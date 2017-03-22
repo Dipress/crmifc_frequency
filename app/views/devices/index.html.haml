@@ -8,6 +8,8 @@
       %th Название
       %th Логин
       %th Частота
+      %th MAC-адрес
+      %th Оборудование
       %th Действия
   %tbody
     - @devices.each do |d|
@@ -17,6 +19,8 @@
         %td= d.contract_comment
         %td= d.login
         %td= d.frequency
+        %td= d.mac
+        %td= ContractParameterType7Value.find(d.hardware).title
         %td
           = link_to 'Edit', edit_device_path(d.to_param), class: 'btn btn-warning'
           = link_to "Delete", device_path(d.to_param), method: :delete, data: { confirm: 'Are you certain you want to delete this?' }, class: 'btn btn-danger'

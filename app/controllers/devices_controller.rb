@@ -50,7 +50,7 @@ class DevicesController < ApplicationController
   end
 
   def create_params
-    params.require(:device).permit(:login, :frequency)
+    params.require(:device).permit(:login, :frequency, :mac, :hardware)
   end
 
   alias update_params create_params
