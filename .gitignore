@@ -10,3 +10,4 @@ config/database.yml
 config/mongoid.yml
 dump.rdb
 .sass-cache
+.vscode
