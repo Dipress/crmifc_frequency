@@ -25,5 +25,8 @@ module CrmFrequency
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
 
     config.time_zone = 'Europe/Moscow'
+    config.to_prepare do
+      Devise::SessionsController.layout "authenticate"
+    end
   end
 end
