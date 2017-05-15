@@ -7,6 +7,7 @@ class Device
   belongs_to :firmware
   belongs_to :registration_frequency
   belongs_to :actual_frequency
+  belongs_to :bandwidth
 
   paginates_per 25
 
