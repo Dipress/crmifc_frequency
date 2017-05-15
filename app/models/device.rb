@@ -6,6 +6,7 @@ class Device
   belongs_to :base_station
   belongs_to :firmware
   belongs_to :registration_frequency
+  belongs_to :actual_frequency
 
   paginates_per 25
 
