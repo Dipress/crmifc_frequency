@@ -4,6 +4,7 @@ class Device
   include Mongoid::Slug
 
   belongs_to :base_station
+  belongs_to :firmware
 
   paginates_per 25
 
