@@ -3,6 +3,8 @@ class Device
   include Mongoid::Timestamps::Created
   include Mongoid::Slug
 
+  belongs_to :base_station
+
   paginates_per 25
 
   field :contract_id, type: Integer
