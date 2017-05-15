@@ -10,4 +10,6 @@
     = f.input :hardware do
       = f.select :hardware, ContractParameterType7Value.where(pid: 68).order('title ASC').map { |h| [h.title, h.id] }, label: 'Оборудование'
   .form-actions
+    = f.association :base_station, label: 'Base Station'
+  .form-actions
     = f.button :submit, "Отправить данные"
