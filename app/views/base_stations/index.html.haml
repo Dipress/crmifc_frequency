@@ -49,3 +49,5 @@
           %td
             = link_to 'Edit', edit_base_station_path(base.to_param), class: 'btn btn-warning'
             = link_to "Delete", base_station_path(base.to_param), method: :delete, data: { confirm: 'Are you certain you want to delete this?' }, class: 'btn btn-danger'
+#pagination
+  = paginate @base_stations

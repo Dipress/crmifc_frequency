@@ -1,6 +1,7 @@
 class BaseStation
   include Mongoid::Document
   include Mongoid::Timestamps::Created
+  include Mongoid::Timestamps::Updated
 
   paginates_per 25
 

@@ -2,7 +2,7 @@ class BaseStationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @base_stations = BaseStation.all
+    @base_stations = BaseStation.order_by(updated_at: 'desc').page(params[:page])
   end
 
   def new
