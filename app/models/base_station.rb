@@ -15,6 +15,7 @@ class BaseStation
 
   field :billing_station_id, type: Integer
   field :name, type: String
+  field :ip, type: String
   field :nagios, type: String
   field :ssid, type: String
   field :azimut, type: String

@@ -46,7 +46,7 @@ class BaseStationsController < ApplicationController
   end
 
   def create_params
-    params.require(:base_station).permit(:billing_station_id, :name, :nagios, :ssid, :azimut, :correct, :mac, :note, 
+    params.require(:base_station).permit(:billing_station_id, :name, :nagios, :ssid, :azimut, :correct, :ip, :mac, :note, 
       :hardware_id, :firmware_id, :registration_frequency_id, :actual_frequency_id, :bandwidth_id, :antenna_type_id)
   end
 

@@ -4,6 +4,7 @@
   %thead
     %tr
       %th name
+      %th ip
       %th nagios
       %th ssid
       %th azimut
@@ -20,6 +21,7 @@
       - if base.correct.eql?(true)
         %tr.success
           %td= base.name
+          %td= base.ip
           %td= base.nagios
           %td= base.ssid
           %td= base.azimut
@@ -36,6 +38,7 @@
       - else
         %tr
           %td= base.name
+          %td= base.ip
           %td= base.nagios
           %td= base.ssid
           %td= base.azimut
