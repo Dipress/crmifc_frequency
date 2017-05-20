@@ -2,7 +2,7 @@ class AntennaType
   include Mongoid::Document
   include Mongoid::Timestamps::Created
 
-  has_many :devices
+  has_many :base_stations
 
   field :name, type: String
 end

@@ -6,11 +6,7 @@ class Device
   paginates_per 25
 
   belongs_to :base_station
-  belongs_to :firmware
-  belongs_to :registration_frequency
-  belongs_to :actual_frequency
-  belongs_to :bandwidth
-  belongs_to :antenna_type
+  belongs_to :hardware
 
   field :contract_id, type: Integer
   field :contract_title, type: String
@@ -19,7 +15,6 @@ class Device
   field :frequency, type: String
   field :mac, type: String
   field :hardware, type: String
-  field :azimut, type: String
 
   slug :contract_id
 
