@@ -7,20 +7,7 @@
   .form-actions
     = f.input :mac, label: 'MAC-адрес', error: 'Поле должно быть заполнено', hint:'Например: 00:00:00:00:00:00', input_html: { class: 'form-control' }, required: true
   .form-actions
-    = f.input :hardware do
-      = f.select :hardware, ContractParameterType7Value.where(pid: 68).order('title ASC').map { |h| [h.title, h.id] }, label: 'Оборудование'
-  .form-actions
-    = f.association :firmware, label: 'Firmware'
-  .form-actions
-    = f.association :registration_frequency, label: 'Registered Frequency'
-  .form-actions
-    = f.association :actual_frequency, label: 'Actual Frequency'
-  .form-actions
-    = f.association :bandwidth, label: 'Bandwidth'
-  .form-actions
-    = f.association :antenna_type, label: 'Antenna Type'
-  .form-actions
-    = f.input :azimut, label: 'Azimut'
+    = f.association :hardware, label: 'Hardware'
   .form-actions
     = f.association :base_station, label: 'Base Station'
   .form-actions

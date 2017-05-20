@@ -19,7 +19,7 @@
         %td= d.contract_comment
         %td= d.login
         %td= d.mac
-        %td= ContractParameterType7Value.find(d.hardware).title
+        %td= d.hardware.name
         %td= d.frequency
         %td
           = link_to 'Edit', edit_device_path(d.to_param), class: 'btn btn-warning'

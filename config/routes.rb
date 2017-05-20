@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   root 'devices#index'
 
   resources :devices, concerns: :paginatable
+  resources :base_stations, concerns: :paginatable
 end

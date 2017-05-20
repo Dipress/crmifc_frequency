@@ -1,0 +1,28 @@
+%h1 Форма для заполнения
+= simple_form_for(@base_station, html: { class: 'form-horizontal' }, wrapper: :horizontal_form) do |f|
+  .form-actions
+    = f.input :billing_station_id, label: 'Billing Id'
+  .form-actions
+    = f.input :name, label: 'Name'
+  .form-actions
+    = f.input :nagios, label: 'Nagios'
+  .form-actions
+    = f.input :ssid, label: 'Ssid'
+  .form-actions
+    = f.input :azimut, label: 'Azimut'
+  .form-actions
+    = f.association :hardware, label: 'Hardware'
+  .form-actions
+    = f.association :firmware, label: 'Firmware'
+  .form-actions
+    = f.association :registration_frequency, label: 'Registered Frequency'
+  .form-actions
+    = f.association :actual_frequency, label: 'Actual Frequency'
+  .form-actions
+    = f.association :bandwidth, label: 'Bandwidth'
+  .form-actions
+    = f.association :antenna_type, label: 'Antenna Type'
+  .form-actions
+    = f.input :note, label: 'Note', as: :text, input_html: { 'rows' => 5}
+  .form-actions
+    = f.button :submit, "Отправить данные"
