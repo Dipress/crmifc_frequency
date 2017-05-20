@@ -2,7 +2,7 @@
 lock "3.7.2"
 
 set :rvm_type, :system
-set :rvm_ruby_version, '2.3.0@crm_frequency-rails5'
+set :rvm_ruby_version, '2.4.1@crm_frequency-rails5'
 set :rvm_roles, [:app, :web]
 
 set :repo_url, "git@github.com:Supro/crmifc_frequency.git"
