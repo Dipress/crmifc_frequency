@@ -9,6 +9,7 @@
       %th azimut
       %th firmware
       %th hardware
+      %th mac
       %th reg.freq
       %th actual freq
       %th bandwidth
@@ -16,17 +17,35 @@
       %th actions
   %tbody
     - @base_stations.each do |base|
-      %tr
-        %td= base.name
-        %td= base.nagios
-        %td= base.ssid
-        %td= base.azimut
-        %td= base.firmware.name
-        %td= base.hardware.name
-        %td= base.registration_frequency.name
-        %td= base.actual_frequency.name
-        %td= base.bandwidth.name
-        %td= base.antenna_type.name
-        %td
-          = link_to 'Edit', edit_base_station_path(base.to_param), class: 'btn btn-warning'
-          = link_to "Delete", base_station_path(base.to_param), method: :delete, data: { confirm: 'Are you certain you want to delete this?' }, class: 'btn btn-danger'
+      - if base.correct.eql?(true)
+        %tr.success
+          %td= base.name
+          %td= base.nagios
+          %td= base.ssid
+          %td= base.azimut
+          %td= base.firmware.name
+          %td= base.hardware.name
+          %td= base.mac
+          %td= base.registration_frequency.name
+          %td= base.actual_frequency.name
+          %td= base.bandwidth.name
+          %td= base.antenna_type.name
+          %td
+            = link_to 'Edit', edit_base_station_path(base.to_param), class: 'btn btn-warning'
+            = link_to "Delete", base_station_path(base.to_param), method: :delete, data: { confirm: 'Are you certain you want to delete this?' }, class: 'btn btn-danger'
+      - else
+        %tr
+          %td= base.name
+          %td= base.nagios
+          %td= base.ssid
+          %td= base.azimut
+          %td= base.firmware.name
+          %td= base.hardware.name
+          %td= base.mac
+          %td= base.registration_frequency.name
+          %td= base.actual_frequency.name
+          %td= base.bandwidth.name
+          %td= base.antenna_type.name
+          %td
+            = link_to 'Edit', edit_base_station_path(base.to_param), class: 'btn btn-warning'
+            = link_to "Delete", base_station_path(base.to_param), method: :delete, data: { confirm: 'Are you certain you want to delete this?' }, class: 'btn btn-danger'

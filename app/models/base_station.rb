@@ -17,5 +17,7 @@ class BaseStation
   field :nagios, type: String
   field :ssid, type: String
   field :azimut, type: String
+  field :correct, type: Boolean, default: false
+  field :mac, type: String
   field :note, type: String
 end

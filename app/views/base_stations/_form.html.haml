@@ -13,6 +13,8 @@
   .form-actions
     = f.association :hardware, label: 'Hardware'
   .form-actions
+    = f.input :mac
+  .form-actions
     = f.association :firmware, label: 'Firmware'
   .form-actions
     = f.association :registration_frequency, label: 'Registered Frequency'
@@ -22,6 +24,8 @@
     = f.association :bandwidth, label: 'Bandwidth'
   .form-actions
     = f.association :antenna_type, label: 'Antenna Type'
+  .checkbox
+    = f.input_field :correct, as: :boolean, inline_label: true, label: false
   .form-actions
     = f.input :note, label: 'Note', as: :text, input_html: { 'rows' => 5}
   .form-actions
