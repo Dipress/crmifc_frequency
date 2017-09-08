@@ -10,8 +10,8 @@ class ScrapNodesTasks
     nodes.each do |n|
       login_page = mechanize.get "http://#{n}:85"
       form = login_page.forms.first
-      form.field_with(id: 'username').value = "control"
-      form.field_with(id: 'password').value = "adm17in"
+      form.field_with(id: 'username').value = "user"
+      form.field_with(id: 'password').value = "password"
       form.submit
       
       data_hash = Hash.new
