@@ -10,6 +10,13 @@ end
 gem 'rails', '~> 5.0.1'
 gem 'axlsx'
 
+#Whenever
+gem 'whenever', require: false
+
+#Web Scraping
+gem 'nokogiri'
+gem 'mechanize'
+
 #Database Mysql
 gem 'mysql2'
 
