@@ -8,6 +8,9 @@ set :rvm_roles, [:app, :web]
 set :repo_url, "git@github.com:Supro/crmifc_frequency.git"
 set :branch, 'master'
 
+set :user, 'deploy'
+set :pty, true
+
 set :rails_env, 'production'
 set :migration_role, :db
 set :migration_servers, -> { primary(fetch(:migration_role)) }
