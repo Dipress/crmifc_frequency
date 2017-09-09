@@ -16,8 +16,9 @@ set :conditionally_migrate, true
 
 set :assets_roles, [:app, :web]
 
-set :bundle_dir, ''
-set :bundle_flags, '--system'
+set :bundle_path, nil
+set :bundle_binstubs, nil
+set :bundle_flags, '--system --quiet'
 
 # Default value for :scm is :git
 # set :scm, :git
