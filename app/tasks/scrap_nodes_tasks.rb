@@ -5,13 +5,13 @@ class ScrapNodesTasks
   
   def self.cutdata
     mechanize = Mechanize.new
-    nodes = BaseStation.all.map { |node| node.ip }.to_a.compact
+    nodes = BaseStation.all.map { |node| node.ip }.to_a.compact.sort
 
     nodes.each do |n|
       login_page = mechanize.get "http://#{n}:85"
       form = login_page.forms.first
-      form.field_with(id: 'username').value = "control"
-      form.field_with(id: 'password').value = "adm17in"
+      form.field_with(id: 'username').value = ENV["bs_login"]
+      form.field_with(id: 'password').value = ENV["bs_password"]
       form.submit
       
       data_hash = Hash.new
@@ -27,5 +27,7 @@ class ScrapNodesTasks
         actual_frequency_id: actual_frequency
         )
     end
+    mechanize.shutdown
+    sleep(10)
   end
 end

@@ -11,3 +11,6 @@ config/mongoid.yml
 dump.rdb
 .sass-cache
 .vscode
+
+# Ignore application configuration
+/config/application.yml

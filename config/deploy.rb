@@ -33,7 +33,7 @@ set :assets_roles, [:app, :web]
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, 'config/database.yml', 'config/secrets.yml', 'config/mongoid.yml'
+append :linked_files, 'config/database.yml', 'config/secrets.yml', 'config/mongoid.yml', 'config/application.yml'
 
 # Default value for linked_dirs is []
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/uploads'
