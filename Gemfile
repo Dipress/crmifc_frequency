@@ -33,6 +33,9 @@ gem 'kaminari-bootstrap', '~> 3.0.1'
 #Others
 gem "figaro"
 
+#Net
+gem "net-ssh"
+
 #Frontend
 gem 'haml'
 gem 'bootstrap-sass', '~> 3.3.6'

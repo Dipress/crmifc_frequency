@@ -338,6 +338,7 @@ DEPENDENCIES
   mongoid
   mongoid-slug
   mysql2
+  net-ssh
   nokogiri
   puma (~> 3.0)
   rails (~> 5.0.1)
