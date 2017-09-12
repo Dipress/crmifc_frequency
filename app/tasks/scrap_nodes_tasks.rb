@@ -19,13 +19,14 @@ class ScrapNodesTasks
         data_hash = mechanize.get "http://#{n}:85/status.cgi"
       
         station = BaseStation.where(ip: n)
-
         actual_frequency = ActualFrequency.where(name: JSON.parse(data_hash.body)["wireless"]["frequency"].gsub(/\s\w{3}/, '')).map {|m| m.id }.first
+        bandwidth = Bandwidth.where(name: JSON.parse(data_hash.body)["wireless"]["chwidth"]).map {|m| m.id }.first
 
         station.update(
           ssid: JSON.parse(data_hash.body)["host"]["hostname"],
           mac: JSON.parse(data_hash.body)["interfaces"][2]["hwaddr"],
-          actual_frequency_id: actual_frequency
+          actual_frequency_id: actual_frequency,
+          bandwidth_id: bandwidth
           )
       rescue Errno::EHOSTUNREACH => e
         puts "#{e.message}"
