@@ -23,7 +23,7 @@ class ScrapNodesTasks
         bandwidth = Bandwidth.where(name: JSON.parse(data_hash.body)["wireless"]["chwidth"]).map {|m| m.id }.first
 
         station.update(
-          ssid: JSON.parse(data_hash.body)["host"]["hostname"],
+          ssid: JSON.parse(data_hash.body)["wireless"]["essid"],
           mac: JSON.parse(data_hash.body)["interfaces"][2]["hwaddr"],
           actual_frequency_id: actual_frequency,
           bandwidth_id: bandwidth
