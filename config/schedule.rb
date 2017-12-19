@@ -20,5 +20,9 @@
 # Learn more: http://github.com/javan/whenever
 
 every 2.hours do
-    runner "ScrapNodesTasks.cutdata"
+	runner "ScrapNodesTasks.cutdata"
+end
+
+every 1.hour do
+	runner "ScrapDevicesTasks.putdata"
 end

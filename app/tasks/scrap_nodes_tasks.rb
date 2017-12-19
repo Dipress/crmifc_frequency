@@ -20,7 +20,7 @@ class ScrapNodesTasks
         platform = ''
         data_hash = mechanize.get "http://#{n}:85/status.cgi"
 
-        Net::SSH.start("#{n}", "control", password: "adm17in") do |ssh|
+        Net::SSH.start("#{n}", ENV["bs_login"], password: ENV["bs_password"]) do |ssh|
           platform  = ssh.exec!("mca-status | tr ',' '\n'")
           platform = platform.scan(/^platform=(.*)/) 
           ssh.close

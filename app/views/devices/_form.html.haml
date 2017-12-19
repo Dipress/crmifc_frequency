@@ -1,6 +1,8 @@
 %h1 Форма для заполнения
 = simple_form_for(@device, html: { class: 'form-horizontal' }, wrapper: :horizontal_form) do |f|
   .form-actions
+    = f.input :ip, label: 'IP-адрес', error: 'Поле должно быть заполнено'
+  .form-actions
     = f.input :login, label: 'Логин', error: 'Поле должно быть заполнено', hint:'Например: ivanov', input_html: { class: 'form-control' }, required: true
   .form-actions
     = f.input :frequency, label: 'Частоста', error: 'Поле должно быть заполнено', hint: 'Например: 5445 Мгц', input_html: { class: 'form-control' }, required: true

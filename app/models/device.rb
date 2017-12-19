@@ -11,13 +11,12 @@ class Device
   field :contract_id, type: Integer
   field :contract_title, type: String
   field :contract_comment, type: String
+  field :ip, type: String
   field :login, type: String
   field :frequency, type: String
   field :mac, type: String
-  field :hardware, type: String
 
-  slug :contract_id
+  slug :login
 
-  validates :login, :frequency, presence: true
-  validates :hardware, presence: true
+  validates :login, :frequency, :ip, presence: true
 end
