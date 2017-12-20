@@ -26,7 +26,7 @@ class ScrapDevicesTasks
               frequency: "0000"
               )
           else
-            Device.update(
+            device.update(
               base_station_id: station_id, 
               hardware_id: "591ffb1d61f9ce213f90712d", 
               mac: "#{a["mac"]}", 
