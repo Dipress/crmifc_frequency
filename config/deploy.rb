@@ -5,7 +5,7 @@ set :rvm_type, :system
 set :rvm_ruby_version, '2.4.1@crm_frequency-rails5'
 set :rvm_roles, [:app, :web]
 
-set :repo_url, "git@github.com:romanyx/crmifc_frequency.git"
+set :repo_url, "git@github.com:Dipress/crmifc_frequency.git"
 set :branch, 'master'
 
 set :rails_env, 'production'
