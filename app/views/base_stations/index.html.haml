@@ -18,7 +18,7 @@
       %th actions
   %tbody
     - @base_stations.each do |base|
-      - if base.correct.eql?(true)
+      - if base.registration_frequency.name.eql?(base.actual_frequency.name)
         %tr.success
           %td= base.name
           %td= base.ip
@@ -36,7 +36,7 @@
             = link_to 'Edit', edit_base_station_path(base.to_param), class: 'btn btn-warning'
             = link_to "Delete", base_station_path(base.to_param), method: :delete, data: { confirm: 'Are you certain you want to delete this?' }, class: 'btn btn-danger'
       - else
-        %tr
+        %tr.error
           %td= base.name
           %td= base.ip
           %td= base.nagios
